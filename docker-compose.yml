@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_gateway
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - autenticador_network
+
+networks:
+  autenticador_network:
+    external: true
